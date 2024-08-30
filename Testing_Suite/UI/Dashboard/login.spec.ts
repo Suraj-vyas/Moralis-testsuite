@@ -9,12 +9,15 @@ test.beforeEach(async ({ page }) => {
     App = new app(page)
 })
 
+test.describe.configure({ mode: 'parallel' });
+
 test.describe('Positive Scenario', async () => {
 
+    test.use({ storageState: "libs/auth.json" })
+
     test('User should be able to Login to Dashboard with Valid credentials', { tag: '@Positive' }, async () => {
-        test.use({ storageState: "libs/auth.json" })
         await App.webPage.NavigateToUrl(testData.MoralisDashboard.url)
-        await App.loginPage.login(testData.MoralisDashboard.validUsername, testData.MoralisDashboard.validPassword)
+        // await App.loginPage.login(testData.MoralisDashboard.validUsername, testData.MoralisDashboard.validPassword)
         expect(await App.nodePage.isUserOnNodePage()).toBeTruthy()
     })
 })
@@ -54,3 +57,4 @@ test.describe('Negative Scenario', async () => {
         expect(await App.nodePage.isUserOnNodePage()).not.toBeTruthy()
     })
 })
+

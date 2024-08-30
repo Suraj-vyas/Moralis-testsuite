@@ -1,7 +1,8 @@
 // abc.ts
-import { Page } from "@playwright/test";
+import test, { Page } from "@playwright/test";
 
 // Utility function to capture a screenshot
 export async function takeScreenshot(page: Page, actionName: string) {
-    await page.screenshot({ path: `screenshots/${actionName}.png` });
+    const SS = await page.screenshot({ path: `screenshots/${actionName}.png` });
+    await test.info().attach('screenshot', { body: SS, contentType: 'image/png' })
 }
