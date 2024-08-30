@@ -61,6 +61,7 @@ export class post {
             console.log("*****".repeat(50));
             console.log("Response Time  ---> ", responseTime, "ms", '\n');
             console.log("Request URL :", '\n\n', response.url(), '\n');
+            console.log("Request Body :", '\n\n', requestBody, '\n');
             console.log("Response Body :", '\n\n', responseBody, '\n');
         })
 

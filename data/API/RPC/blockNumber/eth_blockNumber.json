@@ -1,0 +1,10 @@
+{
+  "eth_blockNumber": {
+    "Validjsonrpc": "2.0",
+    "InValidjsonrpc": "abc",
+    "Validid": 1,
+    "InValidid": "10abc",
+    "Validmethod": "eth_blockNumber",
+    "InValidmethod": "ETH_blockNumber"
+  }
+}
