@@ -7,7 +7,7 @@ dotenv.config()
 
 var API: api
 var verify: schemaValidation
-var requestBody: {}
+var requestBody: any
 const Testdata = dataFile.eth_blockNumber
 const Endpoint = `https://site1.moralis-nodes.com/eth/${process.env.ETH_Node_ID}`
 const schema = {
@@ -39,34 +39,6 @@ test.beforeEach(async ({ request }) => {
 
 test.describe('Positive Scenario', async () => {
 
-    test.skip('Valid', async () => {
-
-        // const responseBody = JSON.parse(await API.post.call_PostMethod_With_200_StatusCode('https://site1.moralis-nodes.com/eth/5a8aeebabaa949db887a4e2f28afe442', {
-        //     "jsonrpc": "2.0",
-        //     "id": 1,
-        //     "method": "eth_blockNumber"
-        // }))
-
-        requestBody = {
-            "jsonrpc": "2.0",
-            "id": "100abc",
-            "method": "eth_blockNumber"
-        }
-
-        const responseBody = {
-            "jsonrpc": "2.0",
-            "id": 1,
-            "result": "0x13af109"
-        }
-
-        expect(responseBody).toHaveProperty('result')
-        const latestBlockNumber = parseInt(responseBody.result, 16)
-        console.log(latestBlockNumber);
-
-        expect(latestBlockNumber).toBeGreaterThanOrEqual(0)
-
-    })
-
     test('TC1_ETH blockNumber', {
         tag: '@Positive',
     }, async () => {
@@ -79,6 +51,8 @@ test.describe('Positive Scenario', async () => {
         verify.Schema(responseBody, schema);
         expect(responseBody).toHaveProperty('result')
         const latestBlockNumber = parseInt(responseBody.result, 16)
+        expect(responseBody.id).toBe(requestBody.id)
+        expect(responseBody.jsonrpc).toBe(requestBody.jsonrpc)
         // console.log(latestBlockNumber);
         expect(latestBlockNumber).toBeGreaterThanOrEqual(0)
     })

@@ -1,0 +1,46 @@
+{
+    "eth_getBlockByNumber": {
+        "Validjsonrpc": "2.0",
+        "InValidjsonrpc": "abc",
+        "Validid": 1,
+        "InValidid": "10abc",
+        "Validmethod": "eth_getBlockByNumber",
+        "InValidmethod": "ETH_getBlockByNumber",
+        "Validparams": [
+            "0x10d4f",
+            false
+        ],
+        "Validparams2": [
+            "0x10d4f",
+            true
+        ],
+        "Validparams3": [
+            "latest",
+            false
+        ],
+        "Validparams4": [
+            "latest",
+            true
+        ],
+        "Validparams5": [
+            "earliest",
+            false
+        ],
+        "Validparams6": [
+            "earliest",
+            true
+        ],
+        "Validparams7": [
+            "pending",
+            false
+        ],
+        "Validparams8": [
+            "pending",
+            true
+        ],
+        "InValidparams": [
+            "abc",
+            true
+        ]
+    }
+}
