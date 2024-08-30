@@ -1,0 +1,9 @@
+{
+    "MoralisDashboard": {
+        "url": "https://admin.moralis.io/nodes",
+        "validUsername": "c3VyYWpAaW50ZWdyYWF0ZS5jb20=",
+        "validPassword": "SmFydXNAMTIz",
+        "inValidUsername": "c3VyYWpAaW50ZWdyYWF0ZS5jb2",
+        "inValidPassword": "SmFydXNAMT"
+    }
+}
