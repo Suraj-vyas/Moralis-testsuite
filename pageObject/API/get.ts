@@ -13,9 +13,7 @@ export class get {
         await test.step("Calling the API", async () => {
             const beforeCallTime: any = new Date();
             response = await this.request.get(endpoint, {
-                params: parameters, headers: {
-                    "x-api-key": "tK503cR23o8YTvXhNoDNo7kQf5sQdbXP8qbqkBeQ"
-                }
+                params: parameters
             })
             const afterCallTime: any = new Date();
             responseTime = (afterCallTime - beforeCallTime)
@@ -43,9 +41,7 @@ export class get {
         await test.step("Calling the API", async () => {
             const beforeCallTime: any = new Date();
             response = await this.request.get(endpoint, {
-                params: parameters, headers: {
-                    "x-api-key": "tK503cR23o8YTvXhNoDNo7kQf5sQdbXP8qbqkBeQ"
-                }
+                params: parameters
             })
             const afterCallTime: any = new Date();
             responseTime = (afterCallTime - beforeCallTime)

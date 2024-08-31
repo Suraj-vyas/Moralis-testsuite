@@ -12,10 +12,10 @@ export class post {
         let responseBody = ""
         await test.step("Calling the API", async () => {
             const beforeCallTime: any = new Date();
+            requestBody.jsonrpc = '2.0'
+            requestBody.id = 1
             response = await this.request.post(endpoint, {
-                data: requestBody, headers: {
-                    "x-api-key": "tK503cR23o8YTvXhNoDNo7kQf5sQdbXP8qbqkBeQ"
-                }
+                data: requestBody
             })
             const afterCallTime: any = new Date();
             responseTime = (afterCallTime - beforeCallTime)
@@ -25,6 +25,8 @@ export class post {
         })
         await test.step("Response status and msg field Validation", async () => {
             responseBody = await response.text()
+            expect(JSON.parse(responseBody).id).toBe(requestBody.id)
+            expect(JSON.parse(responseBody).jsonrpc).toBe(requestBody.jsonrpc)
         })
         await test.step("Test Report Log", async () => {
             console.log("*****".repeat(50));
@@ -43,10 +45,10 @@ export class post {
         let responseBody = ""
         await test.step("Calling the API", async () => {
             const beforeCallTime: any = new Date();
+            requestBody.jsonrpc = '2.0'
+            requestBody.id = 1
             response = await this.request.post(endpoint, {
-                data: requestBody, headers: {
-                    "x-api-key": "tK503cR23o8YTvXhNoDNo7kQf5sQdbXP8qbqkBeQ"
-                }
+                data: requestBody
             })
             const afterCallTime: any = new Date();
             responseTime = (afterCallTime - beforeCallTime)

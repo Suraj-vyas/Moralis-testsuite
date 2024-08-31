@@ -1,9 +1,10 @@
-import { Page } from "@playwright/test";
+import { Page, expect } from "@playwright/test";
 import { decodeEncode } from "../../../libs/decodeEncode";
 import { takeScreenshot } from "../../../libs/screenShot"
 
 export class loginPage {
     protected readonly page: Page
+    protected readonly dashPage_loc = '//span[@data-testid="test-typography" and contains(text(),"Welcome")]'
 
     constructor(page: Page) {
         this.page = page
@@ -23,4 +24,10 @@ export class loginPage {
 
     }
 
+    async isUserOnDashboardPage(flag: boolean) {
+        if (flag)
+            await expect(this.page.locator(this.dashPage_loc).first()).toBeVisible()
+        else
+            await expect(this.page.locator(this.dashPage_loc).first()).not.toBeVisible()
+    }
 } 

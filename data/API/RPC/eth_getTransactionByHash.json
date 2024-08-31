@@ -1,0 +1,15 @@
+{
+  "eth_getTransactionByHash": {
+    "Validjsonrpc": "2.0",
+    "InValidjsonrpc": "abc",
+    "Validid": 1,
+    "InValidid": "10abc",
+    "Validmethod": "eth_getTransactionByHash",
+    "Validparams": [
+      "0xd4b2e80202cc55517c328412a7792772e1bdd925ac1a2120aeafe84316206ad3"
+    ],
+    "InValidparams": [
+      "0x40B38765696e3d5d8d9d834D8AaD4bB6e418E489"
+    ]
+  }
+} 
