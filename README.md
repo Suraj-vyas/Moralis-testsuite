@@ -55,6 +55,8 @@ This repository contains an UI/API test cases of :
     ```bash
     ETH_Node_ID=""
     MORALIS_API_KEY=""
+    MORALIS_UN=""
+    MORALIS_PW=""
     ```
 
 ### Running Tests
@@ -76,6 +78,11 @@ npx playwright test -g "@Positive"
 ```bash
 npx playwright test --ui
 ```
+* To run tests for UI , first user have to remove skip annotation from Testing_Suite/UI/StorageSession/storageSession.spec.ts test case and run the following command and filled the details Manually:
+```bash
+npx playwright test Testing_Suite/UI/StorageSession/storageSession.spec.ts --headed
+```
+
 
 ### Changing of test execution Environment
 
