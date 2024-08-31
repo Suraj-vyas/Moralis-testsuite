@@ -1,5 +1,5 @@
 {
-  "eth_getTransactionByHash": {
+  "eth_getWalletNFTs": {
     "Validformat": "decimal",
     "InValidformat": "abc",
     "Validexclude_spam": true,

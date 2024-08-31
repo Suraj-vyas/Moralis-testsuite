@@ -6,7 +6,7 @@ dotenv.config()
 
 var API: api
 var requestBody: any
-const Testdata = dataFile.eth_getTransactionByHash
+const Testdata = dataFile.eth_getWalletNFTs
 const Endpoint = `https://deep-index.moralis.io/api/v2.2/${Testdata.Validaddress}/nft`
 
 test.beforeEach(async ({ request }) => {
