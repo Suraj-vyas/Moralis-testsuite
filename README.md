@@ -9,6 +9,7 @@ This repository contains an UI/API test cases of :
 3. getWalletNFTs Web3 Data API
 4. Nodes setup Via a Dashboard UI
 5. Login to Dashboard UI
+5. getWalletNFTs Web3 Data API Performance testing
 
 ## Features
 
